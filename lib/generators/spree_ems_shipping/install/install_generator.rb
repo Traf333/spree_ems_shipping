@@ -2,6 +2,7 @@ module SpreeEmsShipping
   module Generators
     class InstallGenerator < Rails::Generators::Base
 
+      source_root File.expand_path("../templates", __FILE__)
       class_option :auto_run_migrations, :type => :boolean, :default => false
 
       def add_javascripts
@@ -26,6 +27,11 @@ module SpreeEmsShipping
           puts 'Skipping rake db:migrate, don\'t forget to run it!'
         end
       end
+
+      def copy_initializer
+        template "spree_ems_shipping.rb", "config/initializers/spree_ems_shipping.rb"
+      end
+
     end
   end
 end
