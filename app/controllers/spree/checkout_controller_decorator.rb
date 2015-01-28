@@ -6,6 +6,6 @@ Spree::CheckoutController.class_eval do
   private
     def handle_ems_shipping_error(e)
       flash[:error] = e.message
-      redirect_to checkout_state_path(:address)
+      redirect_to checkout_state_path(:delivery)
     end
 end

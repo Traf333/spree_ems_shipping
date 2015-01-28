@@ -1,7 +1,7 @@
 #add shipping method
-Rails.application.config.spree.calculators.shipping_methods << EmsShipping
+Rails.application.config.spree.calculators.shipping_methods << Spree::Calculator::EmsRussiaShipping
 
 #basic config
-Ems::Config.set(:api_url => "http://emspost.ru/api/rest")
-Ems::Config.set(:origin_city => "city--moskva")
-Ems::Config.set(:weight_if_nil => 1000.00)
+Spree::EmsShipping::Config[:api_url] = "http://emspost.ru/api/rest"
+Spree::EmsShipping::Config[:origin_city] = "city--moskva"
+Spree::EmsShipping::Config[:weight_if_nil] = 0.01
