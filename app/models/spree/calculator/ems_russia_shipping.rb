@@ -2,10 +2,10 @@ module Spree
   # This is a calculator for shipping calculations in Russia only
   class Calculator::EmsRussiaShipping < ShippingCalculator
 
-    def self.register
-      super
-      ShippingMethod.register_calculator(self)
-    end
+    # def self.register
+    #   super
+    #   ShippingMethod.register_calculator(self)
+    # end
 
     def self.description
       "EMS in Russia"
